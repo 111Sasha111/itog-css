@@ -1,0 +1,153 @@
+.rating-area {
+	overflow: hidden;
+	width: 265px;
+	margin: 0 auto;
+}
+.rating-area:not(:checked) > input {
+	display: none;
+}
+.rating-area:not(:checked) > label {
+	float: right;
+	width: 42px;
+	padding: 0;
+	cursor: pointer;
+	font-size: 32px;
+	line-height: 32px;
+	color: lightgrey;
+	text-shadow: 1px 1px #bbb;
+}
+.rating-area:not(:checked) > label:before {
+	content: '★';
+}
+.rating-area > input:checked ~ label {
+	color: gold;
+	text-shadow: 1px 1px #c60;
+}
+.rating-area:not(:checked) > label:hover,
+.rating-area:not(:checked) > label:hover ~ label {
+	color: gold;
+}
+.rating-area > input:checked + label:hover,
+.rating-area > input:checked + label:hover ~ label,
+.rating-area > input:checked ~ label:hover,
+.rating-area > input:checked ~ label:hover ~ label,
+.rating-area > label:hover ~ input:checked ~ label {
+	color: gold;
+	text-shadow: 1px 1px goldenrod;
+}
+.rate-area > label:active {
+	position: relative;
+}
+
+body {
+  font-family: -apple-system, system-ui, Helvetica, Arial, sans-serif;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+progress {
+  opacity: 0;
+}
+
+.progress-element {
+  width: 200px;
+  margin: 0 0 10px;
+}
+
+.progress-container {
+  position: relative;
+  background: #eee;
+  height: 20px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background: aqua;
+}
+
+.progress-element--html .progress-container::before {
+  animation: progress-html 1s ease-in forwards;
+}
+
+
+.progress-label {
+  position: relative;
+}
+
+@property --num {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+.progress-label::after {
+  counter-reset: num var(--num);
+  content: counter(num) "%";
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.progress-element--html .progress-label::after {
+  animation: progress-text-html 1s ease-in forwards;
+}
+
+@keyframes progress-html {
+  to {
+    width: 100%;
+  }
+}
+
+
+@keyframes progress-text-html {
+  to {
+    --num: 100;
+  }
+}
+.ic { width: 100%; min-width:590px;  }
+.ic__r {height:125px; }
+.ic__it {float: left; position: relative;  }
+.ic__it.ic__it_chr {width: 126px; }
+.ic__it.ic__it_ff { width: 120px; }
+.ic__it.ic__it_op {  width: 108px; }
+.ic__it.ic__it_s { width: 111px; }
+.ic__it.ic__it_e {  width: 125px; float: right; }
+
+.ic__w-img {background: #fff; position: relative; left:0; }
+.ic__alt { position: absolute; left:0; top: 0; right: 0; }
+
+.ic__ltr__green { color: #22a12a; }
+.ic__ltr__red { color: #c90000; }
+.ic__ltr__ylw {color: #f9d411;}
+.ic__ltr__orange { color: #f5b860;}
+.ic__ltr__red_op {color: #c10e0e;}
+.ic__ltr__grey {color: #646464;}
+.ic__ltr__blue { color: #036da3;}
+
+@font-face {
+font-family: 'PT Sans';
+    src: url('font/pts55f_w.eot');
+    src: local('PT Sans'),
+    url('font/PTS55F_W.woff') format('woff'),
+    url('font/PTS55F_W.ttf') format('truetype'),
+    url('font/PTS55F_W.svg#PTSans-Regular') format('svg');
+}
+body  { font:1em/1.3 'PT Sans', Arial, Helvetica, sans-serif; padding: 20px;  }
+.textBl__L { float:left; width: 47.5%; margin-right: 2.5%; }
+.textBl__R { float:left; width: 47.5%; margin-left: 2.5%;  }
+.olDash-it{ padding: 0 0 0 20px; list-style-type: none;
+    background: url('../img/li.gif') no-repeat 0 0.6em;
+    margin-left: -20px;}
+.term {
+    border-bottom: 1px dotted red;
+   }
